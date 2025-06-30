@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BMW Official</title>
+  <link rel="icon" type="image/png" href="logo.jpeg">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<audio id="bmwAudio" loop>
+  <source src="sounds/bmw_sound (2).mp3" type="audio/mpeg">
+</audio>
+
+<script>
+  window.addEventListener('click', function () {
+    document.getElementById('bmwAudio').play();
+  });
+</script>
+
+
+  <nav class="navbar">
+    <div class="logo">BMW</div>
+    <div class="nav-links">
+      <a href="#models" class="nav-btn">Models</a>
+      <a href="#book" class="nav-btn">Book Test Drive</a>
+      <a href="#viewer" class="nav-btn">360° Viewer</a>
+      <a href="#contact" class="nav-btn">Find Us</a>
+      <a href="#more" class="nav-btn">More</a>
+    </div>
+  </nav>
+
+  <header class="hero-video">
+    <video autoplay muted loop id="bg-video">
+      <source src="BMW_video.mp4" type="video/mp4" />
+    </video>
+    <div class="video-text">
+      <h1>Welcome to BMW</h1>
+      <p>Experience the Ultimate Driving Machine</p>
+      <a href="#models" class="btn">Explore Models</a>
+    </div>
+  </header>
+
+ <section id="models" class="models">
+  <h2>Popular Models</h2>
+  <div class="gallery">
+
+    <div class="car" data-info="A sporty coupe with 473 hp.">
+      <img src="BMW_M4.jpg" alt="BMW M4">
+      <h3>BMW M4</h3>
+      <button class="btn">View Details</button>
+    </div>
+
+    <div class="car" data-info="Luxury SUV with seating for 7.">
+      <img src="BMW_X5.avif" alt="BMW X5">
+      <h3>BMW X7</h3>
+      <button class="btn">View Details</button>
+    </div>
+
+    <div class="car" data-info="Plug-in hybrid supercar with futuristic design.">
+      <img src="BMW_i8.webp" alt="BMW i8">
+      <h3>BMW i8</h3>
+      <button class="btn">View Details</button>
+    </div>
+
+    <div class="car" data-info="Compact and efficient daily driver.">
+      <img src="BMW_5S.jpg" alt="BMW 5 Series">
+      <h3>BMW 3 Series</h3>
+      <button class="btn">View Details</button>
+    </div>
+
+    <div class="car" data-info="All-electric sedan with next-gen tech.">
+      <img src="BMW_i4.avif" alt="BMW i4">
+      <h3>BMW i4</h3>
+      <button class="btn">View Details</button>
+    </div>
+
+    <div class="car" data-info="Flagship luxury sedan with top-tier comfort.">
+      <img src="BMW_7S.avif" alt="BMW 7 Series">
+      <h3>BMW 7 Series</h3>
+      <button class="btn">View Details</button>
+    </div>
+
+  </div>
+  <div id="info-box"></div>
+</section>
+
+
+  <section id="book" class="book-test">
+    <h2>Book a Test Drive</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Email" required>
+      <input type="text" placeholder="Preferred Model" required>
+      <button type="submit" class="btn">Submit</button>
+    </form>
+  </section>
+
+  <section id="viewer" class="viewer">
+    <h2>360° Car Viewer</h2>
+    <p>Feature Coming Soon: Explore your favorite BMW from every angle.</p>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Find Us</h2>
+    <p>BMW Showroom <br>123 Luxury Avenue, India</p>
+    <p>Email: contact@bmw.com | Phone: +91-9876543210</p>
+  </section>
+
+  <section id="more" class="more-info">
+    <h2>More About BMW</h2>
+    <p>BMW is a German multinational manufacturer of luxury vehicles and motorcycles headquartered in Munich, Bavaria, Germany.</p>
+  </section>
+
+
+  <script>
+    const cars = document.querySelectorAll('.car');
+    const infoBox = document.getElementById('info-box');
+
+    cars.forEach(car => {
+      car.addEventListener('mouseenter', () => {
+        car.style.backgroundColor = 'rgba(0,0,0,0.7)';
+        car.style.color = '#00f0ff';
+        infoBox.textContent = car.getAttribute('data-info');
+        infoBox.style.opacity = '1';
+      });
+
+      car.addEventListener('mouseleave', () => {
+        car.style.backgroundColor = '';
+        car.style.color = '#fff';
+        infoBox.style.opacity = '0';
+      });
+    });
+  </script>
+
+</body>
+</html>

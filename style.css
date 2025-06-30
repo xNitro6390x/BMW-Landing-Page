@@ -1,0 +1,218 @@
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background-color: #000;
+  color: #fff;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Navigation Bar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #111;
+  padding: 15px 30px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #00f0ff;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-btn {
+  color: white;
+  text-decoration: none;
+  padding: 8px 15px;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+
+.nav-btn:hover {
+  background: #007aff;
+  color: #fff;
+}
+
+/* Hero with Background Video */
+.hero-video {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.video-text {
+  position: relative;
+  z-index: 1;
+  padding-top: 160px;
+  text-align: center;
+  color: white;
+}
+
+.video-text h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.video-text p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.btn {
+  padding: 12px 25px;
+  background: white;
+  color: black;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #007aff;
+  color: white;
+  transform: scale(1.05);
+}
+
+/* Section Layouts */
+section {
+  padding: 60px 20px;
+  background-color: #111;
+  text-align: center;
+}
+
+section h2 {
+  font-size: 2.2rem;
+  margin-bottom: 30px;
+}
+
+/* Gallery / Car Cards */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+/* Car Card with Image and Popup */
+.car {
+  position: relative;
+  width: 280px;
+  background: #222;
+  border-radius: 12px;
+  overflow: hidden;
+  color: white;
+  text-align: center;
+  transition: transform 0.3s ease;
+  padding-bottom: 15px;
+}
+
+.car:hover {
+  transform: scale(1.05);
+}
+
+/* Car Image */
+.car img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-bottom: 2px solid #007aff;
+}
+
+.car h3 {
+  margin: 12px 0 5px;
+  font-size: 1.1rem;
+}
+
+/* Popup Info on Hover */
+.car::before {
+  content: attr(data-info);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-10px);
+  background: #00f0ff;
+  color: black;
+  padding: 8px 12px;
+  border-radius: 8px;
+  white-space: nowrap;
+  font-size: 0.9rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s ease;
+  z-index: 10;
+}
+
+.car:hover::before {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-20px);
+}
+
+/* Info Box for JavaScript (optional, can hide if not used) */
+#info-box {
+  margin-top: 30px;
+  color: #00f0ff;
+  font-size: 1.2rem;
+  opacity: 0;
+  transition: 0.5s ease;
+}
+
+/* Booking Form */
+.book-test form {
+  max-width: 400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.book-test input {
+  padding: 12px;
+  border-radius: 6px;
+  border: none;
+  width: 100%;
+}
+
+/* Viewer & Info Sections */
+.viewer p, .contact p, .more-info p {
+  font-size: 1rem;
+  color: #ccc;
+  margin-top: 10px;
+}
+
+/* Footer */
+footer {
+  padding: 20px;
+  background-color: #000;
+  text-align: center;
+  color: #888;
+  font-size: 0.9rem;
+}
